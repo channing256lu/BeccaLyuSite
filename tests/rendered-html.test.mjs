@@ -74,10 +74,15 @@ test("home is a lightweight entry page with route-based navigation", async () =>
 });
 
 test("each portfolio area renders only on its own route", async () => {
-  const [about, philosophy, evidence, contact] = await Promise.all([
+  const [about, philosophy, evidence, evidenceDetail, pdfPreview, contact] =
+    await Promise.all([
     renderHtml("/about"),
     renderHtml("/philosophy"),
     renderHtml("/evidence"),
+    renderHtml("/evidence/professional-practice/pp-evidence-1"),
+    renderHtml(
+      "/evidence/professional-practice/pdf-preview?src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd.r2.dev%2FProfessionalPractice%2FEvidence1%2Ffile%2FFigure1.pdf&title=Figure%201",
+    ),
     renderHtml("/contact"),
   ]);
 
@@ -219,9 +224,16 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(evidence, /Professional Knowledge/);
   assert.match(evidence, /Professional Practice/);
   assert.match(evidence, /Professional Engagement/);
+  assert.match(evidence, /Professional Practice Evidence/);
+  assert.match(evidence, /Beyond Behaviour: Understanding the Need Behind the Behaviour/);
+  assert.match(evidence, /Assessment-Informed Planning for Individual Progress/);
+  assert.match(evidence, /Making Learning Visible Through Assessment/);
+  assert.match(evidence, /href="\/evidence\/professional-practice\/pp-evidence-1"/);
+  assert.match(evidence, /View evidence page/);
   assert.match(evidence, /id="professional-knowledge"/);
   assert.match(evidence, /id="professional-practice"/);
   assert.match(evidence, /id="professional-engagement"/);
+  assert.match(evidence, /id="professional-practice-evidence"/);
   assert.match(evidence, /evidence-growth-folder-cover\.jpg/);
   assert.match(evidence, /--folder-scale:4\.6/);
   assert.match(
@@ -232,6 +244,17 @@ test("each portfolio area renders only on its own route", async () => {
   assert.doesNotMatch(evidence, /Interactive evidence index/);
   assert.doesNotMatch(evidence, /Drag · scroll · arrow keys/);
   assert.doesNotMatch(evidence, /Interactive professional experience timeline/);
+
+  assert.match(evidenceDetail, /Beyond Behaviour: Understanding the Need Behind the Behaviour/);
+  assert.match(evidenceDetail, /Figure 1\. Individualised Positive Behaviour Support Plan/);
+  assert.match(evidenceDetail, /<img[^>]+Figure 2\. Individual Communication Supports/);
+  assert.match(
+    evidenceDetail,
+    /href="\/evidence\/professional-practice\/pdf-preview\?title=Figure\+1\.[^"]+src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd\.r2\.dev%2FProfessionalPractice%2FEvidence1%2Ffile%2FFigure1\.pdf"/,
+  );
+  assert.doesNotMatch(evidenceDetail, /evidence-preview-modal/);
+  assert.match(pdfPreview, /<iframe class="pdf-preview-frame"/);
+  assert.match(pdfPreview, /Open original/);
 
   assert.match(contact, /Let’s Make Every Child/);
   assert.doesNotMatch(contact, /06 · Let/);
@@ -263,6 +286,9 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
     borderGlow,
     borderGlowCss,
     evidence,
+    professionalPracticeArticle,
+    professionalPracticePage,
+    pdfPreviewPage,
     scrollVideo,
     scrollVideoCss,
     motionDirector,
@@ -293,6 +319,27 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
       "utf8",
     ),
     readFile(new URL("../app/components/Evidence.tsx", import.meta.url), "utf8"),
+    readFile(
+      new URL(
+        "../app/components/ProfessionalPracticeEvidenceArticle.tsx",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "../app/evidence/professional-practice/[slug]/page.tsx",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "../app/evidence/professional-practice/pdf-preview/page.tsx",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
     readFile(
       new URL("../app/components/ScrollVideo.tsx", import.meta.url),
       "utf8",
@@ -363,7 +410,9 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
     philosophyPage,
     /<Foundations \/>|<Gallery \/>|<BorderGlow \/>|<MotionDirector/,
   );
-  assert.match(evidencePage, /<Evidence content=\{content\.evidence\} \/>/);
+  assert.match(evidencePage, /professionalPracticeEvidence/);
+  assert.match(evidencePage, /professionalPracticeSummaries = professionalPracticeEvidence\.map/);
+  assert.match(evidencePage, /professionalPractice=\{professionalPracticeSummaries\}/);
   assert.match(contactPage, /<Contact content=\{content\.contact\} \/>/);
   assert.match(navbar, /from "next\/link"/);
   assert.match(navbar, /usePathname/);
@@ -503,6 +552,12 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
   assert.match(css, /font-size: clamp\(4\.4rem, 7\.3vw, 6\.25rem\)/);
   assert.match(css, /\.contact-email[\s\S]*font-size: 1\.125rem/);
   assert.match(evidence, /<CircularGallery/);
+  assert.match(evidence, /professional-practice-card-actions/);
+  assert.match(professionalPracticeArticle, /professional-practice-figure/);
+  assert.match(professionalPracticeArticle, /getPdfPreviewHref/);
+  assert.match(professionalPracticeArticle, /target="_blank"/);
+  assert.match(professionalPracticePage, /generateStaticParams/);
+  assert.match(pdfPreviewPage, /pdf-preview-frame/);
   assert.match(siteContent, /APST 3 · From Story to Inquiry/);
   assert.match(evidence, /apst-3-from-story-to-inquiry\.jpg/);
   assert.match(evidence, /onItemActivate=\{navigateToCategory\}/);

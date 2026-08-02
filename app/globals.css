@@ -2697,6 +2697,374 @@ em {
   pointer-events: none;
 }
 
+.professional-practice-evidence {
+  margin-top: clamp(54px, 7vw, 104px);
+  scroll-margin-top: clamp(116px, 10vw, 152px);
+}
+
+.professional-practice-evidence-heading {
+  display: grid;
+  width: min(920px, 100%);
+  gap: 14px;
+  margin: 0 auto clamp(28px, 4vw, 44px);
+  text-align: center;
+  text-shadow: var(--video-text-halo);
+}
+
+.professional-practice-evidence-heading h3 {
+  margin: 0;
+  color: var(--video-text);
+  font-family: var(--font-editorial);
+  font-size: clamp(2.4rem, 5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.professional-practice-evidence-grid {
+  display: grid;
+  width: min(1040px, 100%);
+  gap: 18px;
+  margin-inline: auto;
+}
+
+.professional-practice-card {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid rgba(48, 59, 70, 0.18);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(250, 246, 233, 0.9);
+  box-shadow: 0 22px 58px rgba(48, 59, 70, 0.12);
+  text-shadow: none;
+}
+
+.professional-practice-card-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.professional-practice-card-header > span {
+  display: grid;
+  width: 42px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(48, 59, 70, 0.28);
+  border-radius: 50%;
+  color: var(--clay-deep);
+  font-size: 0.74rem;
+  font-weight: 760;
+}
+
+.professional-practice-card-header p {
+  margin: 0 0 8px;
+  color: rgba(48, 59, 70, 0.58);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.professional-practice-card-header h4 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-editorial);
+  font-size: clamp(1.85rem, 3vw, 3rem);
+  font-weight: 420;
+  line-height: 1.02;
+}
+
+.professional-practice-card-header small {
+  display: block;
+  max-width: 760px;
+  margin-top: 10px;
+  color: rgba(48, 59, 70, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.professional-practice-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.professional-practice-card-actions span,
+.professional-practice-card-actions a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  padding: 0 13px;
+  border: 1px solid rgba(48, 59, 70, 0.18);
+  border-radius: 999px;
+  color: rgba(48, 59, 70, 0.74);
+  background: rgba(255, 255, 255, 0.46);
+  font-size: 0.76rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.professional-practice-card-actions a {
+  color: var(--ink);
+  background: rgba(241, 207, 111, 0.62);
+}
+
+.professional-practice-card-actions a:hover,
+.professional-practice-card-actions a:focus-visible {
+  border-color: rgba(197, 127, 108, 0.5);
+  color: var(--clay-deep);
+}
+
+.professional-practice-detail {
+  width: min(1120px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: clamp(94px, 10vw, 138px) 0 clamp(72px, 8vw, 118px);
+  color: var(--ink);
+}
+
+.professional-practice-detail-hero {
+  display: grid;
+  max-width: 930px;
+  gap: 16px;
+  margin: 0 auto clamp(34px, 5vw, 58px);
+  text-align: center;
+  text-shadow: var(--video-text-halo);
+}
+
+.professional-practice-detail-hero > a {
+  width: fit-content;
+  margin: 0 auto 8px;
+  color: var(--video-text);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.professional-practice-detail-hero p {
+  margin: 0;
+  color: rgba(38, 59, 71, 0.72);
+  font-size: 0.76rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.professional-practice-detail-hero h1 {
+  margin: 0;
+  color: var(--video-text);
+  font-family: var(--font-editorial);
+  font-size: clamp(3.25rem, 7vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.94;
+}
+
+.professional-practice-detail-hero span {
+  max-width: 780px;
+  margin: 0 auto;
+  color: rgba(38, 59, 71, 0.78);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.professional-practice-detail-body {
+  display: grid;
+  width: min(980px, 100%);
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(48, 59, 70, 0.16);
+  border-radius: 8px;
+  background: rgba(250, 246, 233, 0.93);
+  box-shadow: 0 22px 58px rgba(48, 59, 70, 0.12);
+  text-shadow: none;
+}
+
+.professional-practice-detail-body h2,
+.professional-practice-detail-body h3 {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.professional-practice-detail-body h2 {
+  margin-top: 34px;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  font-weight: 420;
+  line-height: 1.05;
+}
+
+.professional-practice-detail-body h2:first-child,
+.professional-practice-detail-body h3:first-child {
+  margin-top: 0;
+}
+
+.professional-practice-detail-body h3 {
+  margin-top: 22px;
+  color: var(--clay-deep);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.professional-practice-detail-body p {
+  width: min(820px, 100%);
+  margin: 12px 0 0;
+  margin-inline: auto;
+  color: rgba(48, 59, 70, 0.82);
+  font-size: clamp(1rem, 1.1vw, 1.08rem);
+  line-height: 1.82;
+  overflow-wrap: anywhere;
+}
+
+.professional-practice-inline-link {
+  color: #506f7c;
+  box-shadow: inset 0 -0.1em rgba(197, 127, 108, 0.32);
+  text-decoration: none;
+}
+
+.professional-practice-inline-link:hover {
+  color: var(--clay-deep);
+  box-shadow: inset 0 -0.16em rgba(197, 127, 108, 0.44);
+}
+
+.professional-practice-figure {
+  display: grid;
+  width: min(920px, 100%);
+  gap: 12px;
+  margin: clamp(22px, 3vw, 34px) auto;
+}
+
+.professional-practice-figure img {
+  display: block;
+  width: 100%;
+  max-height: min(720px, 78svh);
+  border: 1px solid rgba(48, 59, 70, 0.14);
+  border-radius: 8px;
+  background: #f7f1e4;
+  object-fit: contain;
+  box-shadow: 0 14px 42px rgba(48, 59, 70, 0.12);
+}
+
+.professional-practice-figure figcaption {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  color: rgba(48, 59, 70, 0.68);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.professional-practice-pdf-card {
+  display: grid;
+  width: min(820px, 100%);
+  gap: 10px;
+  margin: 18px auto;
+  padding: 18px;
+  border: 1px solid rgba(80, 111, 124, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.professional-practice-pdf-card span {
+  color: rgba(48, 59, 70, 0.54);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.professional-practice-pdf-card p {
+  width: auto;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  line-height: 1.22;
+}
+
+.professional-practice-pdf-card a {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(48, 59, 70, 0.22);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(241, 207, 111, 0.68);
+  font-size: 0.82rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.pdf-preview-page {
+  padding: clamp(86px, 8vw, 118px) 0 34px;
+}
+
+.pdf-preview-shell {
+  display: grid;
+  width: min(1180px, calc(100% - 32px));
+  gap: 18px;
+  margin: 0 auto;
+}
+
+.pdf-preview-header {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgba(48, 59, 70, 0.16);
+  border-radius: 8px;
+  background: rgba(250, 246, 233, 0.92);
+  text-shadow: none;
+}
+
+.pdf-preview-header h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-editorial);
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  font-weight: 420;
+  line-height: 1.02;
+}
+
+.pdf-preview-header a {
+  width: fit-content;
+  color: #506f7c;
+  font-size: 0.82rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.pdf-preview-frame {
+  display: block;
+  width: 100%;
+  height: calc(100svh - 210px);
+  min-height: 520px;
+  border: 1px solid rgba(48, 59, 70, 0.16);
+  border-radius: 8px;
+  background: #ede7dc;
+}
+
+.pdf-preview-error {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid rgba(197, 127, 108, 0.28);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(250, 246, 233, 0.92);
+}
+
 .contact-section {
   position: relative;
   display: flex;
@@ -3611,6 +3979,65 @@ main,
   .evidence-gallery-clean {
     height: 430px;
     margin-top: 34px;
+  }
+
+  .professional-practice-evidence {
+    margin-top: 54px;
+  }
+
+  .professional-practice-evidence-heading {
+    text-align: left;
+  }
+
+  .professional-practice-card {
+    padding: 20px;
+  }
+
+  .professional-practice-card-header {
+    grid-template-columns: 1fr;
+  }
+
+  .professional-practice-card-header > span {
+    width: 38px;
+  }
+
+  .professional-practice-detail {
+    width: calc(100% - 30px);
+    padding-top: 98px;
+  }
+
+  .professional-practice-detail-hero {
+    text-align: left;
+  }
+
+  .professional-practice-detail-hero > a,
+  .professional-practice-detail-hero span {
+    margin-inline: 0;
+  }
+
+  .professional-practice-detail-body {
+    padding: 20px;
+  }
+
+  .professional-practice-detail-body h2 {
+    margin-top: 28px;
+  }
+
+  .professional-practice-figure {
+    margin-block: 20px;
+  }
+
+  .professional-practice-figure img {
+    max-height: 68svh;
+  }
+
+  .pdf-preview-page {
+    padding-top: 86px;
+  }
+
+  .pdf-preview-frame {
+    height: calc(100svh - 230px);
+    min-height: 420px;
   }
 
   .practice-foundations {
