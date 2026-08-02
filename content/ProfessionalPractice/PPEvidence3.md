@@ -15,7 +15,7 @@ During my Reception placement (5–6 years), assessment was an ongoing part of t
 
 This analysis informed the design of differentiated learning experiences and appropriate Success Criteria, ensuring that assessment aligned with students’ developmental readiness while maintaining high expectations (Black & Wiliam, 1998; EYLF V2.0, AGDE, 2022).
 
-### [Figure 1](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/file/Figure1.pdf)
+### [Figure 1](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/file/Figure1.pdf)
 
 Evidence analysed before planning (previous writing samples and assessment data).
 
@@ -29,7 +29,7 @@ Assessment was intentionally integrated into planning, teaching, feedback and re
 
 Based on the assessment evidence, I designed a developmental writing sequence that reflected students’ current capabilities rather than expecting all children to achieve the same outcome simultaneously. Learning experiences progressed from communicating ideas through drawings, to adding labels, recording individual words and eventually constructing simple factual sentences (refer to Figure 2; APST 3.1, 3.2, 5.1). This progression reflected children’s existing capabilities while providing appropriate challenge (Vygotsky, 1978).
 
-### [Figure 2](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure2.png)
+### [Figure 2](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure2.png)
 
 Progression of writing from drawing to labels, words and simple sentences.
 
@@ -41,7 +41,7 @@ Every lesson included clearly communicated Learning Intentions and Success Crite
 
 Students’ work samples were collected as ongoing evidence of learning and informed subsequent planning.
 
-### [Figure 3](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure3.png)
+### [Figure 3](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure3.png)
 
 Learning Intentions and Success Criteria embedded within Mathematics lessons.
 
@@ -55,7 +55,7 @@ APST:
 
 Formative assessment continued throughout learning through classroom observations, questioning, conferencing and analysis of students’ work samples. During the Mathematics Data unit, students demonstrated their understanding by sorting objects and explaining the reasoning behind their classifications. Their responses were recorded against the lesson Success Criteria, allowing misconceptions to be identified immediately and informing the level of scaffolding required during the lesson (refer to Figure 4; APST 5.1, 5.2, 5.4).
 
-### [Figure 4](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure4.png)
+### [Figure 4](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure4.png)
 
 Formative assessment checklist aligned with the lesson Success Criteria.
 
@@ -65,7 +65,7 @@ Observation records and student responses provided ongoing evidence of conceptua
 
 At the end of each unit, students completed summative assessment tasks that were evaluated using agreed classroom rubrics. Before finalising achievement levels, I discussed selected student work samples and assessment decisions with my mentor teacher to ensure that judgements were consistent with the agreed Success Criteria and school expectations. Following these moderation discussions, assessment outcomes and teacher comments were shared with families through Seesaw (refer to Figure 5; APST 5.2, 5.3, 5.5).
 
-### [Figure 5](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure5.png)
+### [Figure 5](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure5.png)
 
 Rubric-based summative assessment and reporting through Seesaw.
 
@@ -75,7 +75,7 @@ Assessment decisions were moderated collaboratively with my mentor before studen
 
 Immediate feedback remained an important component of every lesson. Rather than waiting until assessment tasks were completed, I reviewed students’ work during learning and provided specific feedback linked directly to the Success Criteria. This enabled students to recognise successful strategies while understanding the next step in their learning (refer to Figure 6).
 
-### [Figure 6](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure6.jpeg)
+### [Figure 6](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure6.jpeg)
 
 Immediate written feedback provided during the writing lesson.
 
@@ -87,17 +87,17 @@ Positive learning behaviours were reinforced through timely verbal feedback and 
 
 At the conclusion of my placement, I created individual animal crowns that recognised a strength each student had consistently demonstrated, such as being helpful, curious, focused or responsible. This provided a final form of strengths-based recognition without ranking students against one another (refer to Figure 8; APST 1.2, 5.2).
 
-[Figure 7 Class Pet Visual Feedback System](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure7.png)
+[Figure 7 Class Pet Visual Feedback System](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure7.png)
 
 Caption
 
-[Figure 7. Immediate visual feedback used to recognise positive participation and reinforce agreed classroom learning behaviours.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure7.png)
+[Figure 7. Immediate visual feedback used to recognise positive participation and reinforce agreed classroom learning behaviours.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure7.png)
 
-[Figure 8 Individual Animal Strength Awards](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure8.png)
+[Figure 8 Individual Animal Strength Awards](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure8.png)
 
 Caption
 
-[Figure 8. Individual animal awards recognising students’ demonstrated strengths and positive learning dispositions.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw2/image/Figure8.png)
+[Figure 8. Individual animal awards recognising students’ demonstrated strengths and positive learning dispositions.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item2/image/Figure8.png)
 
 ## R — Results
 

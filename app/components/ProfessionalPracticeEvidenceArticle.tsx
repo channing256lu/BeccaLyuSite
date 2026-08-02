@@ -3,8 +3,15 @@ import type { ReactNode } from "react";
 import type { ProfessionalPracticeEvidence } from "../content/professionalPracticeData";
 
 type ProfessionalPracticeEvidenceArticleProps = {
-  evidence: ProfessionalPracticeEvidence;
+  evidence: EvidenceArticleData;
+  backHref?: string;
+  pdfPreviewPath?: string;
 };
+
+type EvidenceArticleData = Pick<
+  ProfessionalPracticeEvidence,
+  "title" | "subtitle" | "standards" | "markdown"
+>;
 
 type MarkdownSegment = {
   text: string;
@@ -23,13 +30,13 @@ function isPdfUrl(url: string) {
   return /\.pdf$/i.test(url);
 }
 
-function getPdfPreviewHref(title: string, url: string) {
+function getPdfPreviewHref(title: string, url: string, pdfPreviewPath: string) {
   const params = new URLSearchParams({
     title,
     src: url,
   });
 
-  return `/evidence/professional-practice/pdf-preview?${params.toString()}`;
+  return `${pdfPreviewPath}?${params.toString()}`;
 }
 
 function splitMarkdownSegments(text: string): MarkdownSegment[] {
@@ -56,7 +63,7 @@ function splitMarkdownSegments(text: string): MarkdownSegment[] {
   return segments.length > 0 ? segments : [{ text }];
 }
 
-function renderInlineText(text: string): ReactNode[] {
+function renderInlineText(text: string, pdfPreviewPath: string): ReactNode[] {
   return splitMarkdownSegments(text).map((segment, index) => {
     if (!segment.href) {
       return <span key={`${segment.text}-${index}`}>{segment.text}</span>;
@@ -66,7 +73,7 @@ function renderInlineText(text: string): ReactNode[] {
       return (
         <Link
           className="professional-practice-inline-link"
-          href={getPdfPreviewHref(segment.text, segment.href)}
+          href={getPdfPreviewHref(segment.text, segment.href, pdfPreviewPath)}
           key={`${segment.href}-${index}`}
           target="_blank"
         >
@@ -89,7 +96,12 @@ function renderInlineText(text: string): ReactNode[] {
   });
 }
 
-function renderAssetBlock(label: string, url: string, key: string) {
+function renderAssetBlock(
+  label: string,
+  url: string,
+  key: string,
+  pdfPreviewPath: string,
+) {
   if (isImageUrl(url)) {
     return (
       <figure className="professional-practice-figure" key={key}>
@@ -105,7 +117,10 @@ function renderAssetBlock(label: string, url: string, key: string) {
       <div className="professional-practice-pdf-card" key={key}>
         <span>PDF evidence</span>
         <p>{label}</p>
-        <Link href={getPdfPreviewHref(label, url)} target="_blank">
+        <Link
+          href={getPdfPreviewHref(label, url, pdfPreviewPath)}
+          target="_blank"
+        >
           Preview PDF
         </Link>
       </div>
@@ -121,7 +136,7 @@ function renderAssetBlock(label: string, url: string, key: string) {
   );
 }
 
-function renderMarkdown(markdown: string) {
+function renderMarkdown(markdown: string, pdfPreviewPath: string) {
   const blocks: ReactNode[] = [];
   let paragraph: string[] = [];
   let skippedTitle = false;
@@ -133,7 +148,9 @@ function renderMarkdown(markdown: string) {
 
     const text = paragraph.join(" ");
     blocks.push(
-      <p key={`p-${blocks.length}`}>{renderInlineText(text)}</p>,
+      <p key={`p-${blocks.length}`}>
+        {renderInlineText(text, pdfPreviewPath)}
+      </p>,
     );
     paragraph = [];
   };
@@ -154,6 +171,7 @@ function renderMarkdown(markdown: string) {
           standaloneLink[1],
           standaloneLink[2],
           `asset-${blocks.length}`,
+          pdfPreviewPath,
         ),
       );
       return;
@@ -172,13 +190,17 @@ function renderMarkdown(markdown: string) {
 
       if (level === 1 || level === 2) {
         blocks.push(
-          <h2 key={`h-${blocks.length}`}>{renderInlineText(text)}</h2>,
+          <h2 key={`h-${blocks.length}`}>
+            {renderInlineText(text, pdfPreviewPath)}
+          </h2>,
         );
         return;
       }
 
       blocks.push(
-        <h3 key={`h-${blocks.length}`}>{renderInlineText(text)}</h3>,
+        <h3 key={`h-${blocks.length}`}>
+          {renderInlineText(text, pdfPreviewPath)}
+        </h3>,
       );
       return;
     }
@@ -192,22 +214,27 @@ function renderMarkdown(markdown: string) {
 
 export function ProfessionalPracticeEvidenceArticle({
   evidence,
+  backHref = "/evidence#professional-practice-evidence",
+  pdfPreviewPath = "/evidence/professional-practice/pdf-preview",
 }: ProfessionalPracticeEvidenceArticleProps) {
   return (
     <article className="professional-practice-detail">
       <header className="professional-practice-detail-hero">
-        <Link href="/evidence#professional-practice-evidence">
-          Back to APST evidence
-        </Link>
+        <Link href={backHref}>Back to APST evidence</Link>
         <p>{evidence.standards.join(" · ")}</p>
         <h1>{evidence.title}</h1>
         {evidence.subtitle ? <span>{evidence.subtitle}</span> : null}
       </header>
 
       <div className="professional-practice-detail-body">
-        {renderMarkdown(evidence.markdown)}
+        {renderMarkdown(evidence.markdown, pdfPreviewPath)}
       </div>
+
+      <footer className="professional-practice-detail-footer">
+        <Link className="professional-practice-back-button" href={backHref}>
+          Back
+        </Link>
+      </footer>
     </article>
   );
 }
-

@@ -2886,6 +2886,42 @@ em {
   text-shadow: none;
 }
 
+.professional-practice-detail-footer {
+  display: flex;
+  justify-content: center;
+  width: min(980px, 100%);
+  margin: clamp(28px, 4vw, 46px) auto 0;
+}
+
+.professional-practice-back-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border: 1px solid rgba(48, 59, 70, 0.22);
+  border-radius: 999px;
+  background: rgba(250, 246, 233, 0.88);
+  color: var(--video-text);
+  font-size: 0.76rem;
+  font-weight: 820;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(48, 59, 70, 0.1);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth-out),
+    border-color var(--duration-fast) var(--ease-smooth-out),
+    background-color var(--duration-fast) var(--ease-smooth-out);
+}
+
+.professional-practice-back-button:hover,
+.professional-practice-back-button:focus-visible {
+  border-color: rgba(48, 59, 70, 0.38);
+  background: rgba(250, 246, 233, 0.98);
+  transform: translateY(-1px);
+}
+
 .professional-practice-detail-body h2,
 .professional-practice-detail-body h3 {
   width: min(820px, 100%);

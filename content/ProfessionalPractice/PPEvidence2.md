@@ -12,9 +12,9 @@ During my preschool placement, I used the EYLF Planning Cycle to assess and supp
 
 A follow-up observation during the first week provided additional evidence of Child M’s progress and highlighted the need for further support with counting accuracy and tool control (refer to Figure 2; APST 1.2, 5.1).
 
-📎 [Figure 1. Initial anecdotal observation identifying Child M’s strengths, learning needs and next learning priorities.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw1/file/Figure1.pdf)
+📎 [Figure 1. Initial anecdotal observation identifying Child M’s strengths, learning needs and next learning priorities.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item1/file/Figure1.pdf)
 
-📎 [Figure 2. Follow-up anecdotal observation documenting ongoing assessment and informing the next stage of planning.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw1/file/Figure2.pdf)
+📎 [Figure 2. Follow-up anecdotal observation documenting ongoing assessment and informing the next stage of planning.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item1/file/Figure2.pdf)
 
 ### A-Action
 
@@ -24,15 +24,15 @@ Drawing on formative assessment principles (Black & Wiliam, 2009), I designed a 
 
 Throughout the learning cycle, observations were used to adjust the level of support, materials and questioning rather than waiting until the end of the program.
 
-📎 [Figure 3. EYLF Planning Cycle showing how assessment evidence informed learning goals, planning and ongoing evaluation.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw1/file/Figure3.pdf)
+📎 [Figure 3. EYLF Planning Cycle showing how assessment evidence informed learning goals, planning and ongoing evaluation.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item1/file/Figure3.pdf)
 
-📎 [Figure 4. Targeted fine motor and numeracy experiences designed in response to assessment evidence.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw1/image/Figure4.png)
+📎 [Figure 4. Targeted fine motor and numeracy experiences designed in response to assessment evidence.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item1/image/Figure4.png)
 
 ### R-Results
 
 Ongoing assessment showed measurable progress across the four-week learning cycle. Child M demonstrated improved finger strength and control by using increasingly smaller tools with greater accuracy. Counting also became more consistent, progressing from occasional skipped numbers to independently counting from one to ten with accurate one-to-one correspondence. Work samples and observation records confirmed that assessment evidence informed both planning and children’s learning progress (refer to Figure 5; APST 5.1, 5.2).
 
-📎 [Figure 5. Assessment summary demonstrating progress in fine motor development, counting accuracy and increasing independence across the learning cycle.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/raw1/image/Figure5.png)
+📎 [Figure 5. Assessment summary demonstrating progress in fine motor development, counting accuracy and increasing independence across the learning cycle.](https://pub-0d63e00396f84c818d577fbc98732ebd.r2.dev/ProfessionalPractice/Evidence2AsessProvideFeedbackAndReportOnStudentLearning/item1/image/Figure5.png)
 
 ### E-Evaluation
 

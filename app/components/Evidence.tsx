@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import { useState } from "react";
 import Link from "next/link";
+import type { ProfessionalKnowledgeEvidence } from "../content/professionalKnowledgeData";
 import type { ProfessionalPracticeEvidence } from "../content/professionalPracticeData";
 import type { SiteContent } from "../content/siteContent";
 import CircularGallery from "./CircularGallery";
@@ -27,10 +28,19 @@ const evidenceItemImages = [
 
 type EvidenceProps = {
   content: SiteContent["evidence"];
+  professionalKnowledge: Omit<ProfessionalKnowledgeEvidence, "markdown">[];
   professionalPractice: Omit<ProfessionalPracticeEvidence, "markdown">[];
 };
 
-export function Evidence({ content, professionalPractice }: EvidenceProps) {
+type EvidenceSummary =
+  | Omit<ProfessionalKnowledgeEvidence, "markdown">
+  | Omit<ProfessionalPracticeEvidence, "markdown">;
+
+export function Evidence({
+  content,
+  professionalKnowledge,
+  professionalPractice,
+}: EvidenceProps) {
   const [activeCategoryIndex, setActiveCategoryIndex] =
     useState<number | null>(null);
   const [galleryFocusIndex, setGalleryFocusIndex] = useState(0);
@@ -61,6 +71,54 @@ export function Evidence({ content, professionalPractice }: EvidenceProps) {
       block: "start",
     });
   };
+
+  const renderEvidenceSection = ({
+    id,
+    title,
+    description,
+    items,
+    routeBase,
+  }: {
+    id: string;
+    title: string;
+    description: string;
+    items: EvidenceSummary[];
+    routeBase: string;
+  }) => (
+    <section
+      id={id}
+      className="professional-practice-evidence"
+      aria-labelledby={`${id}-title`}
+    >
+      <div className="professional-practice-evidence-heading">
+        <p className="eyebrow">{title}</p>
+        <h3 id={`${id}-title`}>{description}</h3>
+      </div>
+
+      <div className="professional-practice-evidence-grid">
+        {items.map((item) => (
+          <article className="professional-practice-card" key={item.id}>
+            <header className="professional-practice-card-header">
+              <span>{item.number}</span>
+              <div>
+                <p>{item.standards.join(" · ")}</p>
+                <h4>{item.title}</h4>
+                {item.subtitle ? <small>{item.subtitle}</small> : null}
+              </div>
+            </header>
+
+            <div className="professional-practice-card-actions">
+              <span>{item.imageCount} images</span>
+              <span>{item.pdfCount} PDFs</span>
+              <Link href={`${routeBase}/${item.slug}`}>
+                View evidence page
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 
   return (
     <section id="evidence" className="section evidence-section">
@@ -153,41 +211,23 @@ export function Evidence({ content, professionalPractice }: EvidenceProps) {
           />
         </div>
 
-        <section
-          id="professional-practice-evidence"
-          className="professional-practice-evidence"
-          aria-labelledby="professional-practice-evidence-title"
-        >
-          <div className="professional-practice-evidence-heading">
-            <p className="eyebrow">Professional Practice Evidence</p>
-            <h3 id="professional-practice-evidence-title">
-              Evidence pages for planning, behaviour support and assessment.
-            </h3>
-          </div>
+        {renderEvidenceSection({
+          id: "professional-knowledge-evidence",
+          title: "Professional Knowledge Evidence",
+          description:
+            "Evidence pages for knowing learners, curriculum content and responsive teaching decisions.",
+          items: professionalKnowledge,
+          routeBase: "/evidence/professional-knowledge",
+        })}
 
-          <div className="professional-practice-evidence-grid">
-            {professionalPractice.map((item) => (
-              <article className="professional-practice-card" key={item.id}>
-                <header className="professional-practice-card-header">
-                  <span>{item.number}</span>
-                  <div>
-                    <p>{item.standards.join(" · ")}</p>
-                    <h4>{item.title}</h4>
-                    {item.subtitle ? <small>{item.subtitle}</small> : null}
-                  </div>
-                </header>
-
-                <div className="professional-practice-card-actions">
-                  <span>{item.imageCount} images</span>
-                  <span>{item.pdfCount} PDFs</span>
-                  <Link href={`/evidence/professional-practice/${item.slug}`}>
-                    View evidence page
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        {renderEvidenceSection({
+          id: "professional-practice-evidence",
+          title: "Professional Practice Evidence",
+          description:
+            "Evidence pages for planning, behaviour support and assessment.",
+          items: professionalPractice,
+          routeBase: "/evidence/professional-practice",
+        })}
       </div>
     </section>
   );

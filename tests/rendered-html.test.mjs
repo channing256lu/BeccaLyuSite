@@ -74,14 +74,26 @@ test("home is a lightweight entry page with route-based navigation", async () =>
 });
 
 test("each portfolio area renders only on its own route", async () => {
-  const [about, philosophy, evidence, evidenceDetail, pdfPreview, contact] =
-    await Promise.all([
+  const [
+    about,
+    philosophy,
+    evidence,
+    evidenceDetail,
+    professionalKnowledgeDetail,
+    pdfPreview,
+    professionalKnowledgePdfPreview,
+    contact,
+  ] = await Promise.all([
     renderHtml("/about"),
     renderHtml("/philosophy"),
     renderHtml("/evidence"),
     renderHtml("/evidence/professional-practice/pp-evidence-1"),
+    renderHtml("/evidence/professional-knowledge/pk-evidence-1"),
     renderHtml(
       "/evidence/professional-practice/pdf-preview?src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd.r2.dev%2FProfessionalPractice%2FEvidence1%2Ffile%2FFigure1.pdf&title=Figure%201",
+    ),
+    renderHtml(
+      "/evidence/professional-knowledge/pdf-preview?src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd.r2.dev%2FProfessionalKnowledge%2FEvidence1%2Ffiles%2FFigure1.pdf&title=Figure%201",
     ),
     renderHtml("/contact"),
   ]);
@@ -224,6 +236,11 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(evidence, /Professional Knowledge/);
   assert.match(evidence, /Professional Practice/);
   assert.match(evidence, /Professional Engagement/);
+  assert.match(evidence, /Professional Knowledge Evidence/);
+  assert.match(evidence, /Following Curiosity Through Sensory Inquiry/);
+  assert.match(evidence, /From Story to Curriculum: Integrating Literacy, Numeracy and Inquiry/);
+  assert.match(evidence, /href="\/evidence\/professional-knowledge\/pk-evidence-1"/);
+  assert.match(evidence, /href="\/evidence\/professional-knowledge\/pk-evidence-2"/);
   assert.match(evidence, /Professional Practice Evidence/);
   assert.match(evidence, /Beyond Behaviour: Understanding the Need Behind the Behaviour/);
   assert.match(evidence, /Assessment-Informed Planning for Individual Progress/);
@@ -233,6 +250,7 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(evidence, /id="professional-knowledge"/);
   assert.match(evidence, /id="professional-practice"/);
   assert.match(evidence, /id="professional-engagement"/);
+  assert.match(evidence, /id="professional-knowledge-evidence"/);
   assert.match(evidence, /id="professional-practice-evidence"/);
   assert.match(evidence, /evidence-growth-folder-cover\.jpg/);
   assert.match(evidence, /--folder-scale:4\.6/);
@@ -252,9 +270,29 @@ test("each portfolio area renders only on its own route", async () => {
     evidenceDetail,
     /href="\/evidence\/professional-practice\/pdf-preview\?title=Figure\+1\.[^"]+src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd\.r2\.dev%2FProfessionalPractice%2FEvidence1%2Ffile%2FFigure1\.pdf"/,
   );
+  assert.match(
+    evidenceDetail,
+    /professional-practice-detail-footer[\s\S]*professional-practice-back-button[\s\S]*\/evidence#professional-practice-evidence[\s\S]*Back/,
+  );
   assert.doesNotMatch(evidenceDetail, /evidence-preview-modal/);
+  assert.match(professionalKnowledgeDetail, /Following Curiosity Through Sensory Inquiry/);
+  assert.match(professionalKnowledgeDetail, /Figure 2\. Learning Story documenting the Bee Sensory Inquiry/);
+  assert.match(
+    professionalKnowledgeDetail,
+    /<img[^>]+Figure 2\. Learning Story documenting the Bee Sensory Inquiry/,
+  );
+  assert.match(
+    professionalKnowledgeDetail,
+    /href="\/evidence\/professional-knowledge\/pdf-preview\?title=Figure\+1\.[^"]+src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd\.r2\.dev%2FProfessionalKnowledge%2FEvidence1%2Ffiles%2FFigure1\.pdf"/,
+  );
+  assert.match(
+    professionalKnowledgeDetail,
+    /professional-practice-detail-footer[\s\S]*professional-practice-back-button[\s\S]*\/evidence#professional-knowledge-evidence[\s\S]*Back/,
+  );
   assert.match(pdfPreview, /<iframe class="pdf-preview-frame"/);
   assert.match(pdfPreview, /Open original/);
+  assert.match(professionalKnowledgePdfPreview, /<iframe class="pdf-preview-frame"/);
+  assert.match(professionalKnowledgePdfPreview, /Open original/);
 
   assert.match(contact, /Let’s Make Every Child/);
   assert.doesNotMatch(contact, /06 · Let/);
@@ -289,6 +327,9 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
     professionalPracticeArticle,
     professionalPracticePage,
     pdfPreviewPage,
+    professionalKnowledgePage,
+    professionalKnowledgePdfPreviewPage,
+    professionalKnowledgeData,
     scrollVideo,
     scrollVideoCss,
     motionDirector,
@@ -338,6 +379,24 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
         "../app/evidence/professional-practice/pdf-preview/page.tsx",
         import.meta.url,
       ),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "../app/evidence/professional-knowledge/[slug]/page.tsx",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "../app/evidence/professional-knowledge/pdf-preview/page.tsx",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+    readFile(
+      new URL("../app/content/professionalKnowledgeData.ts", import.meta.url),
       "utf8",
     ),
     readFile(
@@ -411,6 +470,9 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
     /<Foundations \/>|<Gallery \/>|<BorderGlow \/>|<MotionDirector/,
   );
   assert.match(evidencePage, /professionalPracticeEvidence/);
+  assert.match(evidencePage, /professionalKnowledgeEvidence/);
+  assert.match(evidencePage, /professionalKnowledgeSummaries = professionalKnowledgeEvidence\.map/);
+  assert.match(evidencePage, /professionalKnowledge=\{professionalKnowledgeSummaries\}/);
   assert.match(evidencePage, /professionalPracticeSummaries = professionalPracticeEvidence\.map/);
   assert.match(evidencePage, /professionalPractice=\{professionalPracticeSummaries\}/);
   assert.match(contactPage, /<Contact content=\{content\.contact\} \/>/);
@@ -553,11 +615,19 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
   assert.match(css, /\.contact-email[\s\S]*font-size: 1\.125rem/);
   assert.match(evidence, /<CircularGallery/);
   assert.match(evidence, /professional-practice-card-actions/);
+  assert.match(evidence, /professionalKnowledge/);
   assert.match(professionalPracticeArticle, /professional-practice-figure/);
   assert.match(professionalPracticeArticle, /getPdfPreviewHref/);
   assert.match(professionalPracticeArticle, /target="_blank"/);
   assert.match(professionalPracticePage, /generateStaticParams/);
   assert.match(pdfPreviewPage, /pdf-preview-frame/);
+  assert.match(professionalKnowledgePage, /generateStaticParams/);
+  assert.match(professionalKnowledgePage, /professionalKnowledgeEvidence/);
+  assert.match(professionalKnowledgePage, /professional-knowledge-evidence/);
+  assert.match(professionalKnowledgePage, /professional-knowledge\/pdf-preview/);
+  assert.match(professionalKnowledgePdfPreviewPage, /pdf-preview-frame/);
+  assert.match(professionalKnowledgeData, /Following Curiosity Through Sensory Inquiry/);
+  assert.match(professionalKnowledgeData, /From Story to Curriculum/);
   assert.match(siteContent, /APST 3 · From Story to Inquiry/);
   assert.match(evidence, /apst-3-from-story-to-inquiry\.jpg/);
   assert.match(evidence, /onItemActivate=\{navigateToCategory\}/);
