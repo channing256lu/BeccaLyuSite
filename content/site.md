@@ -191,7 +191,7 @@ in place so the website can read the content.
   "strengths": {
     "sectionWord": "Strengths",
     "eyebrow": "03 · My Qualities & Strengths",
-    "title": "Warmth, reflection and intention.",
+    "title": "My Qualities.",
     "intro": "If you remember one thing about me, I hope it is the care, reliability and reflective thinking I bring to every learning relationship.",
     "qualitiesLabel": "Three core qualities",
     "qualities": [
