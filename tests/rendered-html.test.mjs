@@ -148,7 +148,7 @@ test("each portfolio area renders only on its own route", async () => {
     /currently studying Early Childhood Education for children from birth to eight years/,
   );
   assert.match(about, /completed two professional placements/);
-  assert.match(about, /Warmth, reflection and intention/);
+  assert.match(about, /If you remember one thing about me/);
   assert.match(about, /Reliable &amp; Detail-Oriented/);
   assert.match(about, /Relationship Builder/);
   assert.match(about, /Creative Learning Designer/);
@@ -319,7 +319,30 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
     ),
     readFile(new URL("../app/components/Folder.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/components/Folder.css", import.meta.url), "utf8"),
-    readFile(new URL("../content/site.md", import.meta.url), "utf8"),
+    Promise.all([
+      readFile(new URL("../app/content/siteData.ts", import.meta.url), "utf8"),
+      readFile(new URL("../app/content/sharedData.ts", import.meta.url), "utf8"),
+      readFile(
+        new URL("../app/content/homePageData.ts", import.meta.url),
+        "utf8",
+      ),
+      readFile(
+        new URL("../app/content/aboutPageData.ts", import.meta.url),
+        "utf8",
+      ),
+      readFile(
+        new URL("../app/content/philosophyPageData.ts", import.meta.url),
+        "utf8",
+      ),
+      readFile(
+        new URL("../app/content/evidencePageData.ts", import.meta.url),
+        "utf8",
+      ),
+      readFile(
+        new URL("../app/content/contactPageData.ts", import.meta.url),
+        "utf8",
+      ),
+    ]).then((files) => files.join("\n")),
   ]);
 
   assert.match(page, /getSiteContent/);

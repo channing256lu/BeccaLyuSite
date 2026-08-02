@@ -12,8 +12,8 @@ Educator and Graduate ECT in South Australia.
 - **Motion and visuals:** GSAP, OGL, and local media assets in `public/media`
 - **Runtime target:** Cloudflare Worker-compatible output through Wrangler
 - **Package manager:** pnpm
-- **Content source:** Markdown overrides in `content/pages`, loaded by
-  `app/content/getSiteContent.ts`
+- **Content source:** Structured TypeScript data in page files under
+  `app/content`, mirrored from human-editable Markdown in `content/site.md`
 
 ## Local Development
 
@@ -52,18 +52,20 @@ pnpm run lint
 
 ## Content Editing
 
-Editable site copy lives in `content/pages`. Update only the text between
-matching `<!-- site: ... -->` and `<!-- /site -->` markers so the structured
-content loader can apply changes safely.
+Editable site copy lives in `content/site.md`. This file is for human review and
+copy editing; the website reads structured content from page data files in
+`app/content`.
 
 Key content files:
 
-- `content/pages/00-shared.md`
-- `content/pages/01-home.md`
-- `content/pages/02-about.md`
-- `content/pages/03-philosophy.md`
-- `content/pages/04-evidence.md`
-- `content/pages/05-contact.md`
+- `content/site.md` - human-editable Markdown copy
+- `app/content/siteData.ts` - aggregate structured data imported by the app
+- `app/content/*PageData.ts` - route-specific structured page data
+- `app/content/sharedData.ts` - metadata, navigation, opening, and footer data
+- `app/content/siteContent.ts` - TypeScript content shape
+
+After editing `content/site.md`, update the matching page data file so the
+structured object matches the approved copy before building or deploying.
 
 ## Deployment Notes
 
