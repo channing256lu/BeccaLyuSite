@@ -1,0 +1,100 @@
+@keyframes border-glow-orbit {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.border-glow-target {
+  --glow-padding: 30px;
+  --glow-orbit-duration: 10s;
+  --glow-orbit-delay: 0s;
+  --glow-accent-one: #d6b65f;
+  --glow-accent-two: #7f98a6;
+  --glow-accent-three: #c57f6c;
+
+  isolation: isolate;
+}
+
+.border-glow-positioned {
+  position: relative;
+}
+
+.border-glow-target > .border-glow-mesh,
+.border-glow-target > .border-glow-edge {
+  position: absolute;
+  display: block;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.border-glow-target > .border-glow-mesh {
+  z-index: 20;
+  inset: -2px;
+  padding: 2px;
+  opacity: 0.96;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.border-glow-target > .border-glow-mesh::before {
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 45deg,
+    transparent 0%,
+    transparent 58%,
+    var(--glow-accent-one) 70%,
+    var(--glow-accent-two) 82%,
+    var(--glow-accent-three) 94%,
+    transparent 100%
+  );
+  content: "";
+  transform: rotate(0turn);
+  animation: border-glow-orbit var(--glow-orbit-duration)
+    var(--ease-linear) var(--glow-orbit-delay) infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+.border-glow-target.is-glow-active > .border-glow-mesh::before {
+  animation-play-state: running;
+}
+
+.border-glow-target > .border-glow-edge {
+  z-index: 19;
+  inset: calc(var(--glow-padding) * -1);
+  opacity: 0.7;
+}
+
+.border-glow-target > .border-glow-edge::before {
+  position: absolute;
+  inset: var(--glow-padding);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 2px var(--glow-color),
+    inset 0 0 14px 2px var(--glow-color-40),
+    0 0 13px 2px var(--glow-color-50),
+    0 0 38px 7px var(--glow-color-20);
+  content: "";
+}
+
+.border-glow-static {
+  box-shadow:
+    0 0 0 1px var(--glow-color-40),
+    0 12px 34px var(--glow-color-10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-glow-target > .border-glow-mesh::before {
+    animation: none;
+    opacity: 0.6;
+    transform: rotate(0.12turn);
+    will-change: auto;
+  }
+}

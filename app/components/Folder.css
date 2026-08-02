@@ -1,0 +1,268 @@
+.rb-folder-scale {
+  width: 100px;
+  height: 80px;
+  transform: scale(var(--folder-scale, 1));
+  transform-origin: center;
+}
+
+.rb-folder {
+  width: 100px;
+  height: 80px;
+  outline: none;
+  transition: transform var(--duration-fast) var(--ease-smooth-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rb-folder:hover {
+    transform: translateY(-8px);
+  }
+
+  .rb-folder:not(.folder--open):hover .rb-folder-paper {
+    transform: translate(-50%, 0%);
+  }
+
+  .rb-folder:not(.folder--open):hover .rb-folder-front {
+    transform: skew(15deg) scaleY(0.6);
+  }
+
+  .rb-folder:not(.folder--open):hover .folder-front-right {
+    transform: skew(-15deg) scaleY(0.6);
+  }
+}
+
+.rb-folder.folder--open {
+  transform: translateY(-8px);
+}
+
+.rb-folder.folder--open .rb-folder-paper:nth-child(1) {
+  transform:
+    translate(
+      calc(-120% + var(--magnet-x, 0px)),
+      calc(-70% + var(--magnet-y, 0px))
+    )
+    rotate(-15deg);
+}
+
+.rb-folder.folder--open .rb-folder-paper:nth-child(2) {
+  height: 80%;
+  transform:
+    translate(
+      calc(10% + var(--magnet-x, 0px)),
+      calc(-70% + var(--magnet-y, 0px))
+    )
+    rotate(15deg);
+}
+
+.rb-folder.folder--open .rb-folder-paper:nth-child(3) {
+  height: 80%;
+  transform:
+    translate(
+      calc(-50% + var(--magnet-x, 0px)),
+      calc(-100% + var(--magnet-y, 0px))
+    )
+    rotate(5deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rb-folder.folder--open .rb-folder-paper:nth-child(1):hover {
+    transform:
+      translate(
+        calc(-120% + var(--magnet-x, 0px)),
+        calc(-70% + var(--magnet-y, 0px))
+      )
+      rotate(-15deg)
+      scale(1.07);
+  }
+
+  .rb-folder.folder--open .rb-folder-paper:nth-child(2):hover {
+    transform:
+      translate(
+        calc(10% + var(--magnet-x, 0px)),
+        calc(-70% + var(--magnet-y, 0px))
+      )
+      rotate(15deg)
+      scale(1.07);
+  }
+
+  .rb-folder.folder--open .rb-folder-paper:nth-child(3):hover {
+    transform:
+      translate(
+        calc(-50% + var(--magnet-x, 0px)),
+        calc(-100% + var(--magnet-y, 0px))
+      )
+      rotate(5deg)
+      scale(1.07);
+  }
+}
+
+.rb-folder.folder--open .rb-folder-front {
+  transform: skew(15deg) scaleY(0.6);
+}
+
+.rb-folder.folder--open .folder-front-right {
+  transform: skew(-15deg) scaleY(0.6);
+}
+
+.rb-folder-back {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  border-radius: 0 10px 10px;
+  background: var(--folder-back-color);
+  box-shadow: 0 12px 28px rgba(48, 59, 70, 0.16);
+}
+
+.rb-folder-back::after {
+  position: absolute;
+  bottom: 98%;
+  left: 0;
+  z-index: 0;
+  width: 30px;
+  height: 10px;
+  border-radius: 5px 5px 0 0;
+  background: var(--folder-back-color);
+  content: "";
+}
+
+.rb-folder-toggle {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 0;
+  border: 0;
+  border-radius: 5px 10px 10px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rb-folder-paper {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  z-index: 2;
+  width: 70%;
+  height: 80%;
+  overflow: hidden;
+  border: 1px solid rgba(48, 59, 70, 0.1);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--paper-1);
+  box-shadow: 0 6px 16px rgba(48, 59, 70, 0.1);
+  transform: translate(-50%, 10%);
+  transform-origin: center;
+  transition:
+    height var(--duration-fast) var(--ease-smooth-out),
+    box-shadow var(--duration-fast) var(--ease-smooth-out),
+    transform var(--duration-medium) var(--ease-smooth-out);
+  will-change: transform;
+}
+
+.rb-folder-paper.is-interactive {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.rb-folder-paper.is-interactive:focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 2px;
+}
+
+.rb-folder-paper.is-active {
+  box-shadow:
+    0 0 0 1px var(--sun),
+    0 12px 28px rgba(48, 59, 70, 0.22);
+}
+
+.rb-folder-paper:nth-child(2) {
+  width: 80%;
+  height: 70%;
+  background: var(--paper-2);
+}
+
+.rb-folder-paper:nth-child(3) {
+  width: 90%;
+  height: 60%;
+  background: var(--paper-3);
+}
+
+.rb-folder-front {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 5px 10px 10px;
+  background-color: var(--folder-color);
+  background-image:
+    linear-gradient(rgba(46, 70, 62, 0.04), rgba(46, 70, 62, 0.16)),
+    var(--folder-cover-image, none);
+  background-position: center, var(--folder-cover-position, center);
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  transform-origin: bottom;
+  transition: transform var(--duration-medium) var(--ease-smooth-out);
+  will-change: transform;
+}
+
+.folder-front-left {
+  clip-path: polygon(0 0, 50.5% 0, 50.5% 100%, 0 100%);
+}
+
+.folder-front-right {
+  clip-path: polygon(49.5% 0, 100% 0, 100% 100%, 49.5% 100%);
+}
+
+.rb-folder-toggle:focus-visible {
+  border-radius: 10px;
+  outline: 2px solid var(--sun);
+  outline-offset: 7px;
+}
+
+.folder-paper-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3px;
+  padding: 8px 7px 7px;
+  text-align: left;
+}
+
+.folder-paper-content span {
+  color: var(--clay-deep);
+  font-size: 4px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.folder-paper-content strong {
+  font-family: var(--font-editorial);
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.folder-paper-content i {
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--sage);
+}
+
+.paper-2 .folder-paper-content i {
+  background: var(--dusty-blue);
+}
+
+.paper-3 .folder-paper-content i {
+  background: var(--sun);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-folder,
+  .rb-folder-paper,
+  .rb-folder-front,
+  .rb-folder-toggle {
+    transition: none !important;
+  }
+}
