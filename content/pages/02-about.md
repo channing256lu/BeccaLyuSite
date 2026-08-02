@@ -367,7 +367,7 @@ Coming soon.
 
 ### Title
 <!-- site: strengths.title -->
-Warmth, reflection and intention.
+My Qualities.
 <!-- /site -->
 
 ### Intro
