@@ -1,3 +1,4 @@
+
 <!-- Converted from app/content/philosophyPageData.ts. Keep this Markdown in sync with the structured page data. -->
 # Teaching Philosophy Page Text
 
@@ -54,7 +55,7 @@ My Core Principles
 
 ### Section label
 
-Understanding Growth
+01. Understanding Growth
 
 ### Growth title
 
@@ -101,7 +102,7 @@ Every child is precious and worthy of being seen for who they are and who they a
 
 ### Title
 
-The Educator's Role
+Understanding Growth
 
 ### Intro
 
