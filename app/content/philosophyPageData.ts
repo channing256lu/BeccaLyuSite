@@ -136,8 +136,7 @@ export const philosophyPageData = {
       }
     ],
     "viewEvidenceLabel": "View APST evidence ↗",
-    "feedbackKicker": "02 · Feedback for the Next Step",
-    "feedbackTitle": "Feedback should open the next possibility.",
+    "feedbackTitle": "Feedback for the Next Step",
     "feedbackParagraphs": [
       "Feedback should help children understand both what they have achieved and what they can do next. Rather than relying on general praise, I aim to recognise specific strategies, decisions, persistence and improvement.",
       "Encouragement should build confidence, but it should also remain purposeful by guiding children towards new strategies, deeper thinking or greater independence."
