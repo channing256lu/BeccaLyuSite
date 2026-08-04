@@ -641,7 +641,7 @@ Diversity · Strengths · Participation
 
 ### Section label
 
-01. Understanding Growth
+Understanding Growth
 
 ### Growth title
 
@@ -680,7 +680,7 @@ Every child is precious and worthy of being seen for who they are and who they a
 
 ### Title
 
-Understanding Growth
+The Educator's Role
 
 ### Intro
 

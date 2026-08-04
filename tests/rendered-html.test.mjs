@@ -196,7 +196,10 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(philosophy, /APST 1\.5/);
   assert.match(philosophy, /No Flower Must Become a Rose/);
   assert.match(philosophy, /a hundred languages/);
-  assert.match(philosophy, /id="role-title"[^>]*>Understanding Growth/);
+  assert.match(
+    philosophy,
+    /id="role-title"[^>]*>\s*The Educator(?:'|&#x27;)s Role/,
+  );
   assert.match(philosophy, />support</);
   assert.match(philosophy, />assess</);
   assert.doesNotMatch(philosophy, /II · Teacher/);

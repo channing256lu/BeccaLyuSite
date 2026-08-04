@@ -454,7 +454,15 @@
 }
 
 .exhibition-growth-opening .exhibition-growth-kicker {
+  position: relative;
+  top: -70px;
+  font-family: "Iowan Old Style", Baskerville, "Palatino Linotype", Palatino,
+    Georgia, serif;
   font-size: clamp(4rem, 6vw, 4.82rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  text-transform: none;
 }
 
 .exhibition-growth-opening h2 {
@@ -1047,7 +1055,7 @@
   max-width: 9ch;
   margin: 0;
   color: var(--museum-ink);
-  font-size: clamp(4.2rem, 5.1vw, 5.45rem);
+  font-size: 65.356px;
   font-weight: 650;
   letter-spacing: 0.075em;
   line-height: 0.9;
@@ -1169,7 +1177,7 @@
 
 .exhibition-conditions-title {
   grid-area: title;
-  font-size: clamp(3.7rem, 5.5vw, 4.95rem);
+  font-size: 59.2px;
 }
 
 .exhibition-conditions-visual {
@@ -1279,7 +1287,7 @@
 
 .exhibition-scaffolding-title {
   grid-area: title;
-  font-size: clamp(3.6rem, 6.1vw, 6.5rem);
+  font-size: 64.916px;
   letter-spacing: 0.055em;
   line-height: 0.94;
 }

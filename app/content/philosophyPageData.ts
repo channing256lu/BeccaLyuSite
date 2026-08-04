@@ -42,7 +42,7 @@ export const philosophyPageData = {
         "accent": "plum"
       }
     ],
-    "growthKicker": "01. Understanding Growth",
+    "growthKicker": "Understanding Growth",
     "growthTitle": "Growth is Development and Ongoing",
     "growthStatement": "Children’s physical, social, emotional, linguistic and cognitive development unfolds through interconnected stages and does not always progress in a simple or linear way. Knowledge of developmental milestones helps me recognise emerging capabilities, understand what may be developmentally appropriate and provide timely support. However, milestones should guide professional observation rather than operate as rigid deadlines or labels. A child who has not yet demonstrated a skill should not automatically be viewed as unable; their learning may require further time, experience, intentional teaching or a different form of support. Respecting development therefore means neither rushing children nor passively waiting, but responding thoughtfully to what is emerging.",
     "growthReference": "(ACECQA, 2012, 2024; Australian Government Department of Education, 2022)",
@@ -61,7 +61,7 @@ export const philosophyPageData = {
       "Bud",
       "Bloom"
     ],
-    "roleTitle": "Understanding Growth",
+    "roleTitle": "The Educator's Role",
     "roleStatement": "",
     "metaphorTrail": [
       "Flower",
