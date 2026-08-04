@@ -42,8 +42,8 @@ export const philosophyPageData = {
         "accent": "plum"
       }
     ],
-    "growthKicker": "I · Understanding Growth",
-    "growthTitle": "Growth Is Developmental and Ongoing",
+    "growthKicker": "01. Understanding Growth",
+    "growthTitle": "Growth is Development and Ongoing",
     "growthStatement": "Children’s physical, social, emotional, linguistic and cognitive development unfolds through interconnected stages and does not always progress in a simple or linear way. Knowledge of developmental milestones helps me recognise emerging capabilities, understand what may be developmentally appropriate and provide timely support. However, milestones should guide professional observation rather than operate as rigid deadlines or labels. A child who has not yet demonstrated a skill should not automatically be viewed as unable; their learning may require further time, experience, intentional teaching or a different form of support. Respecting development therefore means neither rushing children nor passively waiting, but responding thoughtfully to what is emerging.",
     "growthReference": "(ACECQA, 2012, 2024; Australian Government Department of Education, 2022)",
     "developmentTitle": "No Flower Must Become a Rose",
@@ -61,8 +61,8 @@ export const philosophyPageData = {
       "Bud",
       "Bloom"
     ],
-    "roleTitle": "The Educator’s Role",
-    "roleStatement": "Responsive teaching begins with attention and grows through relationship, intentional conditions and responsive support.",
+    "roleTitle": "Understanding Growth",
+    "roleStatement": "",
     "metaphorTrail": [
       "Flower",
       "Growth",
@@ -85,7 +85,7 @@ export const philosophyPageData = {
     ],
     "conditionsHighlight": "When engagement is difficult, I consider whether the language, pace, space, task or expectations may be creating barriers.",
     "quoteKicker": "Key Inspiration",
-    "quote": "If children feel safe, they can take risks, ask questions, make mistakes, learn to trust, share their feelings, and grow.",
+    "quote": "\"If children feel safe, they can take risks, ask questions, make mistakes, learn to trust, share their feelings, and grow.\"",
     "quoteAuthor": "— Alfie Kohn",
     "scaffoldingTitle": "Responsive Scaffolding",
     "scaffoldingDeck": "Support should be responsive, not identical.",
@@ -148,8 +148,8 @@ export const philosophyPageData = {
     "feedbackAfterTitle": "Purposeful feedback",
     "feedbackAfterQuote": "“You tried two different strategies before you found one that worked. What helped you decide?”",
     "feedbackAfterSmall": "Specific feedback returns thinking to the child.",
-    "codaKicker": "03 · Growing Alongside Children",
-    "codaTitle": "My role is not to decide which flower a child should become, but to help every child feel seen, supported and confident to grow in their own way.",
+    "codaKicker": "",
+    "codaTitle": "Growth Alongside Children",
     "codaCopy": "My teaching philosophy also requires me to reflect on my own growth as an educator. I use children’s responses, mentor feedback, professional dialogue and research to question my assumptions and refine my practice. I understand that effective teaching is never finished; it develops through observation, reflection and a continuing commitment to children’s learning, wellbeing and rights.",
     "codaWords": [
       "Professional Learning",

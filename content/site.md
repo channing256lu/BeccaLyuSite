@@ -641,11 +641,11 @@ Diversity · Strengths · Participation
 
 ### Section label
 
-I · Understanding Growth
+01. Understanding Growth
 
 ### Growth title
 
-Growth Is Developmental and Ongoing
+Growth is Development and Ongoing
 
 ### Growth statement
 
@@ -680,11 +680,11 @@ Every child is precious and worthy of being seen for who they are and who they a
 
 ### Title
 
-The Educator’s Role
+Understanding Growth
 
 ### Intro
 
-Responsive teaching begins with attention and grows through relationship, intentional conditions and responsive support.
+
 
 ### Knowing title
 
@@ -723,7 +723,7 @@ Key Inspiration
 
 ### Quote
 
-If children feel safe, they can take risks, ask questions, make mistakes, learn to trust, share their feelings, and grow.
+"If children feel safe, they can take risks, ask questions, make mistakes, learn to trust, share their feelings, and grow."
 
 ### Quote author
 
@@ -814,11 +814,11 @@ Specific feedback returns thinking to the child.
 
 ### Section label
 
-03 · Growing Alongside Children
+
 
 ### Final title
 
-My role is not to decide which flower a child should become, but to help every child feel seen, supported and confident to grow in their own way.
+Growth Alongside Children
 
 ### Final paragraph
 

@@ -508,10 +508,10 @@ export function PhilosophyStory({ content }: PhilosophyStoryProps) {
         aria-labelledby="growth-title"
       >
         <div className="shell exhibition-chapter-opening-inner">
-          <p className="exhibition-kicker t-stagger-line t-stagger-line--1">
+          <p className="exhibition-kicker exhibition-growth-kicker t-stagger-line t-stagger-line--1">
             {content.growthKicker}
           </p>
-          <h2 id="growth-title" className="t-stagger-line t-stagger-line--2">
+          <h2 id="growth-title" className="exhibition-growth-title t-stagger-line t-stagger-line--2">
             {content.growthTitle}
           </h2>
           <p className="exhibition-growth-statement">
@@ -607,11 +607,24 @@ export function PhilosophyStory({ content }: PhilosophyStoryProps) {
             className="exhibition-metaphor-trail t-stagger-line t-stagger-line--3"
             aria-label="Teaching philosophy exhibition sequence"
           >
-            {content.metaphorTrail.map((item) => (
-              <li className={item === "Teacher" ? "is-current" : undefined} key={item}>
-                {item}
-              </li>
-            ))}
+            {content.metaphorTrail.map((item) => {
+              let label = item;
+
+              if (item === "Teacher") {
+                label = "support";
+              } else if (item === "Assessment") {
+                label = "assess";
+              }
+
+              return (
+                <li
+                  className={label === "support" ? "is-current" : undefined}
+                  key={item}
+                >
+                  {label}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
@@ -773,14 +786,24 @@ export function PhilosophyStory({ content }: PhilosophyStoryProps) {
             className="exhibition-metaphor-trail t-stagger-line t-stagger-line--3"
             aria-label="Teaching philosophy exhibition sequence"
           >
-            {content.metaphorTrail.map((item) => (
-              <li
-                className={item === "Assessment" ? "is-current" : undefined}
-                key={item}
-              >
-                {item}
-              </li>
-            ))}
+            {content.metaphorTrail.map((item) => {
+              let label = item;
+
+              if (item === "Teacher") {
+                label = "support";
+              } else if (item === "Assessment") {
+                label = "Assess";
+              }
+
+              return (
+                <li
+                  className={label === "Assess" ? "is-current" : undefined}
+                  key={item}
+                >
+                  {label}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>

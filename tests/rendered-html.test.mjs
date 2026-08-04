@@ -188,7 +188,7 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(philosophy, /Reggio Emilia-inspired/);
   assert.match(philosophy, /Intentional &amp; Responsive/);
   assert.match(philosophy, /Inclusive &amp; Strengths-based/);
-  assert.match(philosophy, /Growth Is Developmental and Ongoing/);
+  assert.match(philosophy, /Growth is Development and Ongoing/);
   assert.match(philosophy, /Children’s physical, social, emotional, linguistic and cognitive development/);
   assert.match(philosophy, /ACECQA, 2012, 2024/);
   assert.match(philosophy, /APST 1\.1/);
@@ -196,7 +196,9 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(philosophy, /APST 1\.5/);
   assert.match(philosophy, /No Flower Must Become a Rose/);
   assert.match(philosophy, /a hundred languages/);
-  assert.match(philosophy, /id="role-title"[^>]*>The Educator’s Role/);
+  assert.match(philosophy, /id="role-title"[^>]*>Understanding Growth/);
+  assert.match(philosophy, />support</);
+  assert.match(philosophy, />assess</);
   assert.doesNotMatch(philosophy, /II · Teacher/);
   assert.match(philosophy, />Knowing Each Child</);
   assert.doesNotMatch(philosophy, /01 · Knowing Each Child/);
@@ -220,10 +222,7 @@ test("each portfolio area renders only on its own route", async () => {
     /Learning becomes visible long before the final bloom/,
   );
   assert.doesNotMatch(philosophy, /See the learning before the bloom/);
-  assert.match(
-    philosophy,
-    /My role is not to decide which flower a child should become/,
-  );
+  assert.match(philosophy, /Growth Alongside Children/);
   assert.match(philosophy, /href="\/evidence"/);
   assert.doesNotMatch(philosophy, /Teaching portfolio/);
   assert.doesNotMatch(philosophy, /project-card/);
@@ -659,7 +658,7 @@ test("ships route splitting, lightweight motion, and portfolio media", async () 
   assert.match(philosophyStory, /progressApstTags/);
   assert.match(siteContent, /Feedback for the Next Step/);
   assert.match(philosophyStory, /feedbackApstTags/);
-  assert.match(siteContent, /Growing Alongside Children/);
+  assert.match(siteContent, /Growth Alongside Children/);
   assert.match(philosophyStory, /reflectionApstTags/);
   assert.match(
     philosophyStoryCss,

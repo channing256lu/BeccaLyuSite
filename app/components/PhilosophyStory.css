@@ -453,10 +453,22 @@
   margin-bottom: clamp(18px, 2vw, 28px);
 }
 
+.exhibition-growth-opening .exhibition-growth-kicker {
+  font-size: clamp(4rem, 6vw, 4.82rem);
+}
+
 .exhibition-growth-opening h2 {
   max-width: 1120px;
   font-size: clamp(3.15rem, 5.45vw, 6.15rem);
   line-height: 0.96;
+}
+
+.exhibition-growth-opening h2.exhibition-growth-title {
+  font-size: clamp(2.5rem, 3.95vw, 3.175rem);
+  font-family: var(--font-body);
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
 }
 
 .exhibition-growth-statement,
@@ -567,7 +579,7 @@
 .exhibition-sticky-copy h2.exhibition-rose-heading {
   max-width: 18ch;
   font-family: inherit;
-  font-size: clamp(2.65rem, 4.25vw, 3.7rem);
+  font-size: clamp(2.2rem, 3.55vw, 3.05rem);
   font-weight: 650;
   letter-spacing: 0.055em;
   line-height: 1.02;
@@ -1035,7 +1047,7 @@
   max-width: 9ch;
   margin: 0;
   color: var(--museum-ink);
-  font-size: clamp(4.2rem, 6.25vw, 6.7rem);
+  font-size: clamp(4.2rem, 5.1vw, 5.45rem);
   font-weight: 650;
   letter-spacing: 0.075em;
   line-height: 0.9;
@@ -1232,7 +1244,7 @@
 .exhibition-quote blockquote p {
   margin: 0;
   font-family: var(--font-editorial);
-  font-size: clamp(3.1rem, 5.75vw, 6.8rem);
+  font-size: clamp(2.65rem, 3.65vw, 2.925rem);
   letter-spacing: -0.05em;
   line-height: 0.98;
   text-wrap: balance;
@@ -1267,7 +1279,7 @@
 
 .exhibition-scaffolding-title {
   grid-area: title;
-  font-size: clamp(3.6rem, 6.1vw, 7rem);
+  font-size: clamp(3.6rem, 6.1vw, 6.5rem);
   letter-spacing: 0.055em;
   line-height: 0.94;
 }
@@ -1353,7 +1365,7 @@
 
 .exhibition-timeline h2.exhibition-timeline-title {
   max-width: 100%;
-  font-size: clamp(3.25rem, 4.55vw, 4.1rem);
+  font-size: clamp(3.25rem, 4.55vw, 3.975rem);
 }
 
 .exhibition-timeline .exhibition-section-deck {
@@ -1645,7 +1657,7 @@
 
 .exhibition-coda h2.exhibition-coda-title-long {
   max-width: 1180px;
-  font-size: clamp(3.25rem, 5.25vw, 6rem);
+  font-size: clamp(3.25rem, 5.25vw, 6.125rem);
   line-height: 1.02;
   text-wrap: balance;
 }
@@ -1843,7 +1855,7 @@
 
   .exhibition-sticky-copy h2.exhibition-rose-heading {
     max-width: 18ch;
-    font-size: clamp(2.65rem, 5.6vw, 3.7rem);
+    font-size: clamp(2.2rem, 4.8vw, 3.05rem);
   }
 
   .exhibition-sticky-copy > p.exhibition-rose-comparison,
@@ -2148,7 +2160,7 @@
 
   .exhibition-sticky-copy h2.exhibition-rose-heading {
     max-width: 14ch;
-    font-size: clamp(2.4rem, 10.8vw, 3.2rem);
+    font-size: clamp(2rem, 9vw, 2.85rem);
     letter-spacing: 0.045em;
     line-height: 1.02;
   }
