@@ -10,7 +10,7 @@ type ProfessionalPracticeEvidenceArticleProps = {
 
 type EvidenceArticleData = Pick<
   ProfessionalPracticeEvidence,
-  "title" | "subtitle" | "standards" | "markdown"
+  "id" | "title" | "subtitle" | "standards" | "markdown"
 >;
 
 type MarkdownSegment = {
@@ -218,7 +218,10 @@ export function ProfessionalPracticeEvidenceArticle({
   pdfPreviewPath = "/evidence/professional-practice/pdf-preview",
 }: ProfessionalPracticeEvidenceArticleProps) {
   return (
-    <article className="professional-practice-detail">
+    <article
+      className="professional-practice-detail"
+      data-evidence-id={evidence.id}
+    >
       <header className="professional-practice-detail-hero">
         <Link href={backHref}>Back to APST evidence</Link>
         <p>{evidence.standards.join(" · ")}</p>

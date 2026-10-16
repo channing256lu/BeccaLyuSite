@@ -19,7 +19,7 @@ export const professionalPracticeEvidence = [
     "number": "01",
     "fileName": "PPEvidence1.md",
     "title": "Beyond Behaviour: Understanding the Need Behind the Behaviour",
-    "subtitle": "During my placement in a 3–4-year-old preschool room, I worked closely with Child D, who had recently arrived in Australia and had very limited English. He could not yet communicate many of his needs to educators or understand unfamiliar routines and instructions. Staff alerted me that he frequently cried, shouted, hit or bit when frustrated and sometimes experienced conflict with peers.",
+    "subtitle": "",
     "standards": [
       "APST 1.3",
       "APST 1.5",

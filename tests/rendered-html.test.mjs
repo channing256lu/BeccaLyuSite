@@ -243,6 +243,7 @@ test("each portfolio area renders only on its own route", async () => {
   assert.match(evidence, /From Story to Curriculum: Integrating Literacy, Numeracy and Inquiry/);
   assert.match(evidence, /href="\/evidence\/professional-knowledge\/pk-evidence-1"/);
   assert.match(evidence, /href="\/evidence\/professional-knowledge\/pk-evidence-2"/);
+  assert.doesNotMatch(evidence, /href="\/evidence\/professional-knowledge\/pk-evidence-3"/);
   assert.match(evidence, /Professional Practice Evidence/);
   assert.match(evidence, /Beyond Behaviour: Understanding the Need Behind the Behaviour/);
   assert.match(evidence, /Assessment-Informed Planning for Individual Progress/);
@@ -266,6 +267,11 @@ test("each portfolio area renders only on its own route", async () => {
   assert.doesNotMatch(evidence, /Interactive professional experience timeline/);
 
   assert.match(evidenceDetail, /Beyond Behaviour: Understanding the Need Behind the Behaviour/);
+  assert.match(evidenceDetail, /data-evidence-id="pp-evidence-1"/);
+  assert.doesNotMatch(
+    evidenceDetail,
+    /professional-practice-detail-hero[\s\S]*?<span>[\s\S]*?<\/header>/,
+  );
   assert.match(evidenceDetail, /Figure 1\. Individualised Positive Behaviour Support Plan/);
   assert.match(evidenceDetail, /<img[^>]+Figure 2\. Individual Communication Supports/);
   assert.match(

@@ -2866,6 +2866,12 @@ em {
   line-height: 0.94;
 }
 
+.professional-practice-detail[data-evidence-id="pp-evidence-1"]
+  .professional-practice-detail-hero
+  h1 {
+  font-size: clamp(3.25rem, 5.46vw, 4.25rem);
+}
+
 .professional-practice-detail-hero span {
   max-width: 780px;
   margin: 0 auto;
