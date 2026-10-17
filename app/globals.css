@@ -2697,6 +2697,11 @@ em {
   pointer-events: none;
 }
 
+.evidence-section-anchor {
+  display: block;
+  scroll-margin-top: clamp(116px, 10vw, 152px);
+}
+
 .professional-practice-evidence {
   margin-top: clamp(54px, 7vw, 104px);
   scroll-margin-top: clamp(116px, 10vw, 152px);

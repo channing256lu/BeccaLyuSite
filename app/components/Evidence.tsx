@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import { useState } from "react";
 import Link from "next/link";
+import type { ProfessionalEngagementEvidence } from "../content/professionalEngagementData";
 import type { ProfessionalKnowledgeEvidence } from "../content/professionalKnowledgeData";
 import type { ProfessionalPracticeEvidence } from "../content/professionalPracticeData";
 import type { SiteContent } from "../content/siteContent";
@@ -30,16 +31,19 @@ type EvidenceProps = {
   content: SiteContent["evidence"];
   professionalKnowledge: Omit<ProfessionalKnowledgeEvidence, "markdown">[];
   professionalPractice: Omit<ProfessionalPracticeEvidence, "markdown">[];
+  professionalEngagement: Omit<ProfessionalEngagementEvidence, "markdown">[];
 };
 
 type EvidenceSummary =
   | Omit<ProfessionalKnowledgeEvidence, "markdown">
-  | Omit<ProfessionalPracticeEvidence, "markdown">;
+  | Omit<ProfessionalPracticeEvidence, "markdown">
+  | Omit<ProfessionalEngagementEvidence, "markdown">;
 
 export function Evidence({
   content,
   professionalKnowledge,
   professionalPractice,
+  professionalEngagement,
 }: EvidenceProps) {
   const [activeCategoryIndex, setActiveCategoryIndex] =
     useState<number | null>(null);
@@ -78,18 +82,21 @@ export function Evidence({
     description,
     items,
     routeBase,
+    anchorId,
   }: {
     id: string;
     title: string;
     description: string;
     items: EvidenceSummary[];
     routeBase: string;
+    anchorId?: string;
   }) => (
     <section
       id={id}
       className="professional-practice-evidence"
       aria-labelledby={`${id}-title`}
     >
+      {anchorId ? <span id={anchorId} className="evidence-section-anchor" /> : null}
       <div className="professional-practice-evidence-heading">
         <p className="eyebrow">{title}</p>
         <h3 id={`${id}-title`}>{description}</h3>
@@ -110,6 +117,14 @@ export function Evidence({
             <div className="professional-practice-card-actions">
               <span>{item.imageCount} images</span>
               <span>{item.pdfCount} PDFs</span>
+              {item.assetCount > item.imageCount + item.pdfCount ? (
+                <span>
+                  {item.assetCount - item.imageCount - item.pdfCount} document
+                  {item.assetCount - item.imageCount - item.pdfCount === 1
+                    ? ""
+                    : "s"}
+                </span>
+              ) : null}
               <Link href={`${routeBase}/${item.slug}`}>
                 View evidence page
               </Link>
@@ -192,12 +207,14 @@ export function Evidence({
 
         <div id="evidence-card-gallery" className="evidence-gallery-clean">
           {evidenceCategories.map((category) => (
-            <span
-              id={category.id}
-              className="evidence-gallery-anchor"
-              aria-hidden="true"
-              key={category.id}
-            />
+            category.id === "professional-engagement" ? null : (
+              <span
+                id={category.id}
+                className="evidence-gallery-anchor"
+                aria-hidden="true"
+                key={category.id}
+              />
+            )
           ))}
           <CircularGallery
             items={evidenceItems}
@@ -227,6 +244,16 @@ export function Evidence({
             "Evidence pages for planning, behaviour support and assessment.",
           items: professionalPractice,
           routeBase: "/evidence/professional-practice",
+        })}
+
+        {renderEvidenceSection({
+          id: "professional-engagement-evidence",
+          title: "Professional Engagement Evidence",
+          description:
+            "Evidence pages for professional learning, collaboration and connections with families and education communities.",
+          items: professionalEngagement,
+          routeBase: "/evidence/professional-engagement",
+          anchorId: "professional-engagement",
         })}
       </div>
     </section>

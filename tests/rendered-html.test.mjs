@@ -316,6 +316,27 @@ test("each portfolio area renders only on its own route", async () => {
   assert.doesNotMatch(contact, /Practice, made accountable/);
 });
 
+test("professional engagement evidence cards and articles render", async () => {
+  const [index, first, second, preview] = await Promise.all([
+    renderHtml("/evidence"),
+    renderHtml("/evidence/professional-engagement/pe-evidence-1"),
+    renderHtml("/evidence/professional-engagement/pe-evidence-2"),
+    renderHtml(
+      "/evidence/professional-engagement/pdf-preview?src=https%3A%2F%2Fpub-0d63e00396f84c818d577fbc98732ebd.r2.dev%2FProfessionalEngagement%2FEvidence2%2Ffiles%2FFigure8a.pdf&title=Figure%208a",
+    ),
+  ]);
+
+  assert.match(index, /id="professional-engagement-evidence"/);
+  assert.match(index, /href="\/evidence\/professional-engagement\/pe-evidence-1"/);
+  assert.match(index, /href="\/evidence\/professional-engagement\/pe-evidence-2"/);
+  assert.match(first, /data-evidence-id="pe-evidence-1"/);
+  assert.match(first, /Figure 2\. Video-Based Self-Reflection/);
+  assert.match(first, /Figure 3\. Engaging Phonemic Awareness Learning/);
+  assert.match(second, /data-evidence-id="pe-evidence-2"/);
+  assert.match(second, /Figure 8d\. Practicum Assessment Report/);
+  assert.match(preview, /<iframe class="pdf-preview-frame"/);
+});
+
 test("ships route splitting, lightweight motion, and portfolio media", async () => {
   const [
     page,
